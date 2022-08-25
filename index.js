@@ -1,7 +1,6 @@
 const express = require('express');
 const dbConnection = require('./db/connection');
 const cors = require('cors');
-const cookieSession = require("cookie-session");
 require('dotenv').config();
 
 
@@ -22,16 +21,7 @@ const app = express();
 // CORS
 app.use(cors());
 
-app.use(
-    cookieSession({
-      name: "__session",
-      keys: ["key1"],
-        maxAge: 24 * 60 * 60 * 100,
-        secure: true,
-        httpOnly: true,
-        sameSite: 'lax'
-    })
-);
+
 
 // Directorio publico
 app.use( express.static('public') );

@@ -2,6 +2,12 @@ const { DataTypes } = require('sequelize');
 const  dbConnection  = require('../db/connection');
 
 const Computer = dbConnection.define('computer', {
+    id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.BIGINT
+    },
     fuap: {
        type: DataTypes.STRING 
     },
