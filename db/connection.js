@@ -14,6 +14,6 @@ const dbConnection = new Sequelize('bwobk3prlqiftqyareyd', 'ulz82r5jeg1l90ap', '
     // logging: false
 });
 
-dbConnection.sync({});
+dbConnection.sync({}); // Solucionar SequelizeConnectionRefusedError: connect ECONNREFUSED
 
 module.exports = dbConnection;
