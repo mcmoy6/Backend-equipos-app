@@ -41,6 +41,10 @@ app.use('/api/inventario', require('./routes/inventario') );
 app.use('/api/regulador', require('./routes/regulador') );
 app.use('/api/monitor', require('./routes/monitor') );
 
+app.get('*', ( req, res ) => {
+    res.sendFile( __dirname + '/public/index.html' );
+});
+
 
 // Escuchar peticiones
 app.listen( process.env.PORT, () => {
