@@ -11,7 +11,7 @@ const dbConnection = new Sequelize('bwobk3prlqiftqyareyd', 'ulz82r5jeg1l90ap', '
     host: 'bwobk3prlqiftqyareyd-mysql.services.clever-cloud.com',
     port: 3306,
     dialect: 'mysql',
-    logging: false
+    // logging: false
 });
 
 dbConnection.sync({}); // Solucionar SequelizeConnectionRefusedError: connect ECONNREFUSED

@@ -2,6 +2,12 @@ const { DataTypes } = require('sequelize');
 const  dbConnection  = require('../db/connection');
 
 const Empleado = dbConnection.define('empleado', {
+    id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.BIGINT.UNSIGNED
+    },
     label: {
        type: DataTypes.STRING 
     },
@@ -14,24 +20,13 @@ const Empleado = dbConnection.define('empleado', {
     nombre: {
         type: DataTypes.STRING
     },
-    nom_completo:{
-        type: DataTypes.STRING
-    },
-    curp:{
-        type: DataTypes.STRING
-    },
-    rfc: {
-        type: DataTypes.STRING
-    },
     denom_puesto: {
         type: DataTypes.STRING
     },
     denom_servicio: {
         type: DataTypes.STRING
-    },
-    denom_centro_trabajo: {
-        type: DataTypes.STRING
     }
+   
            
 });
 
