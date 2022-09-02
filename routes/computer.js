@@ -22,6 +22,7 @@ router.post(
         check('serieCpu', 'La serie del Cpu es obligatoria').not().isEmpty(),
         check('serieMonitor', 'La serie del Monitor es obligatoria').not().isEmpty(),
         check('serieNobreak', 'La serie del Nobreak es obligatoria').not().isEmpty(),
+        check('area', 'El área de empleado es obligatoria').not().isEmpty(),
         validarCampos
     ],
     registrarEquipo );

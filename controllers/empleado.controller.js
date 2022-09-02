@@ -16,7 +16,7 @@ const registrarEmpleado = async ( req, res = response ) => {
         res.json({
             ok: true,
             msg: 'Empelado registrado.',
-            equipo: empleado
+            empleado
         });
         
     } catch (error) {
