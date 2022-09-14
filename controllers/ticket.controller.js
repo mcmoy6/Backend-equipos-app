@@ -1,5 +1,6 @@
 const {response} = require('express');
 const Ticket = require('../models/ticket.model');
+const { Op } = require("sequelize");
 
 const registrarTicket = async ( req, res = response ) => {
 
@@ -39,11 +40,36 @@ const obtenerTickets = async ( req, res = response ) => {
 
 }
 
+// const obtenerTicket = async ( req, res = response ) => {
+
+//     const {id} = req.params;
+
+//     const ticket = await Ticket.findByPk(id);
+//     if ( !ticket ) {
+//         return res.status(404).json({
+//             msg: 'No existen resultados que mostrar'
+//         });
+//     }
+
+//     res.json({
+//         ok: true,
+//         msg: 'Datos del ticket.',
+//         ticket
+//     });
+
+// }
+
 const obtenerTicket = async ( req, res = response ) => {
 
     const {id} = req.params;
 
-    const ticket = await Ticket.findByPk(id);
+    const ticket = await Ticket.findAll({
+        where:{
+            num_reporte: {
+                [Op.like]: `%${id}%`
+            }
+        }
+    });
     if ( !ticket ) {
         return res.status(404).json({
             msg: 'No existen resultados que mostrar'
