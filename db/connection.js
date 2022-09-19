@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
 
-const dbConnection = new Sequelize('node', 'root', 'Entermoy6', {
+const dbConnection = new Sequelize('node', 'root', '', {
     host: 'localhost',
     dialect: 'mysql',
     // logging: false
