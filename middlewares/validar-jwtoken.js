@@ -18,8 +18,12 @@ const validarJWT = (req, res = response, next ) => {
         
         const payload = jwt.verify( token, process.env.SECRET_JWT_SEED );
 
+        console.log(payload);
+
         req.uid = payload.uid;
         req.name = payload.name;
+        req.idSitio = payload.idSitio;
+        req.role = payload.role;
 
 
     } catch (error) {

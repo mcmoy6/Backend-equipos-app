@@ -17,6 +17,12 @@ const Usuario = dbConnection.define('usuario', {
     password:{
         type: DataTypes.STRING
     },
+    id_sitio:{
+        type: DataTypes.STRING
+    },
+    role: {
+        type: DataTypes.STRING
+    },
     estado: {
         type: DataTypes.BOOLEAN
     }       

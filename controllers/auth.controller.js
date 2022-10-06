@@ -58,7 +58,7 @@ const crearUsuario = async (req, res = response) => {
         await usuario.save();
 
         // Generar token
-        const token = await generarJWT( usuario.id, usuario.nombre );
+        const token = await generarJWT( usuario.id, usuario.nombre, usuario.id_sitio );
 
 
         // Una vez registrado el usuario, hacemos la consulta para asi poder obtener el id y el nombre 
@@ -70,14 +70,15 @@ const crearUsuario = async (req, res = response) => {
             }
         });
         
-        const { id, nombre } = usuarioSave;
+        const { id, nombre, id_sitio } = usuarioSave;
 
         res.status(201).json({
             ok: true,
             msg: 'usuario registrado',
             token,
             id,
-            nombre
+            nombre,
+            id_sitio
         });
         
     } catch (error) {
@@ -104,7 +105,7 @@ const loginUsuario = async (req, res = response ) => {
             }
         });
 
-        const { nombre, id } = usuario
+        const { nombre, id, id_sitio, role } = usuario
 
         if ( !usuario ) {
             return res.status(400).json({
@@ -123,14 +124,16 @@ const loginUsuario = async (req, res = response ) => {
         }
 
         // Si todo sale bien, generamos el JWT
-        const token = await generarJWT( usuario.id, usuario.nombre );
+        const token = await generarJWT( usuario.id, usuario.nombre, usuario.id_sitio, usuario.role );
 
          res.json({
                 ok: true,
                 msg: 'ok',
                 token,
                 id,
-                nombre
+                nombre,
+                id_sitio, 
+                role
             });
 
         
@@ -149,17 +152,23 @@ const revalidarToken = async (req, res = response) => {
 
     const uid = req.uid;
     const name = req.name;
+    const idSitio = req.idSitio
+    const role = req.role
+
+    // console.log(req);
     
 
     // Se genera el nuevo token
-    const token = await generarJWT( uid, name );
+    const token = await generarJWT( uid, name, idSitio, role );
 
     res.json({
         ok: true,
         msg: 'Renew token ok.',
         token,
         uid,
-        name
+        name,
+        idSitio, 
+        role
     });
 }
 

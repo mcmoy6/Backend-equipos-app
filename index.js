@@ -33,13 +33,14 @@ app.use( express.json() );
 app.use('/api/auth', require('./routes/auth') );
 app.use('/api/computer', require('./routes/computer') );
 app.use('/api/empleado', require('./routes/empleado') );
+app.use('/api/impresora', require('./routes/impresora') );
+app.use('/api/inventario', require('./routes/inventario') );
+app.use('/api/monitor', require('./routes/monitor') );
+app.use('/api/movimiento', require('./routes/movimiento') );
+app.use('/api/regulador', require('./routes/regulador') );
+app.use('/api/role', require('./routes/role') );
 app.use('/api/sitio', require('./routes/sitio') );
 app.use('/api/ticket', require('./routes/ticket') );
-app.use('/api/impresora', require('./routes/impresora') );
-app.use('/api/movimiento', require('./routes/movimiento') );
-app.use('/api/inventario', require('./routes/inventario') );
-app.use('/api/regulador', require('./routes/regulador') );
-app.use('/api/monitor', require('./routes/monitor') );
 
 app.get('*', ( req, res ) => {
     res.sendFile( __dirname + '/public/index.html' );
