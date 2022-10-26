@@ -9,7 +9,7 @@ const { validarCampos } = require('../middlewares/validar-campos');
 
 const { validarJWT } = require('../middlewares/validar-jwtoken');
 
-const { registrarEquipo, obtenerEquipos, obtenerEquipo, actualizarEquipo, eliminarEquipo } = require('../controllers/computer.controller');
+const { registrarEquipo, obtenerEquipos, countEquipos, obtenerEquipo, actualizarEquipo, eliminarEquipo } = require('../controllers/computer.controller');
 
 const router = Router();
 
@@ -28,6 +28,8 @@ router.post(
     registrarEquipo );
 
 router.get('/', obtenerEquipos );
+
+router.get('/count', countEquipos );
 
 router.get('/:id', obtenerEquipo );
 

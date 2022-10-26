@@ -82,6 +82,17 @@ const obtenerEquipos = async ( req, res = response ) => {
 
 }
 
+const countEquipos = async ( req, res = response) => {
+
+    const cantidadEquipos = await Computer.count();
+
+    res.json({
+        ok: true,
+        msg: 'He aquí la cantidad de esquipos de computo.',
+        cantidadEquipos
+    });
+}
+
 const obtenerEquipo = async ( req, res = response ) => {
 
     const {id} = req.params;
@@ -207,6 +218,7 @@ const eliminarEquipo = async ( req, res = response ) => {
 module.exports = {
     registrarEquipo,
     obtenerEquipos,
+    countEquipos,
     obtenerEquipo, 
     actualizarEquipo,
     eliminarEquipo

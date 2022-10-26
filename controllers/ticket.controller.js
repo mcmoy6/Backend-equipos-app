@@ -78,7 +78,7 @@ const obtenerTicket = async ( req, res = response ) => {
 
     res.json({
         ok: true,
-        msg: 'Datos del ticket.',
+        msg: 'Datos del ticket....',
         ticket
     });
 
