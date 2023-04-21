@@ -84,7 +84,7 @@ const crearUsuario = async (req, res = response) => {
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            msg: 'Error a la hora de guardar. Por favor, hable con el administrador'
+            msg: 'Error a la hora de guardar. Por favor, hable con el administradora'
         });
         
     }
