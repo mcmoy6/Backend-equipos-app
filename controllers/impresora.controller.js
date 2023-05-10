@@ -7,6 +7,18 @@ const registrarImpresora = async ( req, res = response ) => {
 
     try {
 
+        const existSeriePrinter = await Impresora.findOne({
+            where: {
+                serie: body.serie
+            }
+        });
+
+        if ( existSeriePrinter ) {
+            return res.status(400).json({
+                msg: 'Ya se encuentra registrada la serie: ' + body.serie
+            });
+        }
+
         const impresora = new Impresora( body );
 
         await impresora.save();
