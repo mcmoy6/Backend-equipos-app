@@ -25,7 +25,7 @@ const Usuario = dbConnection.define('usuario', {
     },
     estado: {
         type: DataTypes.BOOLEAN
-    }       
+    }      
 });
 
 module.exports = Usuario;

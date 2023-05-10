@@ -24,10 +24,10 @@ const Impresora = dbConnection.define('impresora', {
         type: DataTypes.STRING
     },
     contador_bn:{
-        type: DataTypes.BIGINT.UNSIGNED
+        type: DataTypes.BIGINT
     },
     contador_color:{
-        type: DataTypes.BIGINT.UNSIGNED
+        type: DataTypes.BIGINT
     },
     ubicacion:{
         type: DataTypes.STRING
@@ -36,7 +36,7 @@ const Impresora = dbConnection.define('impresora', {
         type: DataTypes.STRING
     },
     createdBy: {
-        type: DataTypes.BIGINT.UNSIGNED
+        type: DataTypes.BIGINT
     }  
 });
 

@@ -187,18 +187,18 @@ const putUsuario = async (req, res = response) => {
             });
         }
 
-         // Verificamos si en BD ya existe un email igual a proveniente del Body
-         const existeEmail = await Usuario.findOne({
-            where: {
-                email: body.email
-            }
-        });
+        //  // Verificamos si en BD ya existe un email igual a proveniente del Body
+        //  const existeEmail = await Usuario.findOne({
+        //     where: {
+        //         email: body.email
+        //     }
+        // });
 
-        if ( existeEmail ) {
-            return res.status(400).json({
-                msg: 'Ya existe un usuario con el email: ' + body.email
-            });
-        }
+        // if ( existeEmail ) {
+        //     return res.status(400).json({
+        //         msg: 'Ya existe un usuario con el email: ' + body.email
+        //     });
+        // }
         
         await usuario.update(body);
         res.json(usuario);

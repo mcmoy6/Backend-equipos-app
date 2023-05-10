@@ -35,13 +35,15 @@ const Cuenta = dbConnection.define('cuentas', {
     tipoCuenta: {
         type: DataTypes.STRING
     },
-    status: {
-        type: DataTypes.BOOLEAN
+    estatus: {
+        type: DataTypes.TINYINT
     },
     justificacion: {
         type: DataTypes.STRING
     },
-           
+    createdBy: {
+        type: DataTypes.BIGINT
+    }       
 });
 
 module.exports = Cuenta;

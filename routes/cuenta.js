@@ -20,9 +20,16 @@ router.use( validarJWT );
 router.post(
     '/new', 
     [ // Middlewares
-        check('nombre', 'El nombre para la cuenta es obligatorio').not().isEmpty(),
-        check('primerApellido', 'El apellido para la cuenta es obligatorio').not().isEmpty(),
-        check('segundoApellido', 'El segundo apellido para la cuenta es obligatorio').not().isEmpty(),
+        check('tipoCuenta', 'Que tipo de cuenta solicita?').not().isEmpty(),
+        check('nombre', 'El nombre es obligatorio.').not().isEmpty(),
+        check('primerApellido', 'El apellido es obligatorio').not().isEmpty(),
+        check('segundoApellido', 'El segundo apellido es obligatorio').not().isEmpty(),
+        check('noEmpleado', 'El # de empleado es obligatorio').not().isEmpty(),
+        check('denomPuesto', 'Por favor ingresar el puesto').not().isEmpty(),
+        check('denomArea', 'Por favor ingresar el área').not().isEmpty(),
+        check('ip', 'Ingresar la IP del equipo').not().isEmpty(),
+        check('host', 'Ingresar el Host').not().isEmpty(),
+        check('justificacion', 'Se requiere una justificación').not().isEmpty(),
        
         validarCampos
     ],
