@@ -33,6 +33,7 @@ app.use( express.json() );
 app.use('/api/auth', require('./routes/auth') );
 app.use('/api/computer', require('./routes/computer') );
 app.use('/api/cuenta', require('./routes/cuenta') );
+app.use('/api/imagenologia', require('./routes/imagenologia') );
 app.use('/api/empleado', require('./routes/empleado') );
 app.use('/api/impresora', require('./routes/impresora') );
 app.use('/api/inventario', require('./routes/inventario') );
