@@ -24,7 +24,7 @@ router.post(
         check('modelo', 'Ingresar el modelo del equipo.').not().isEmpty(),
         check('serie', 'Ingresar la serie del equipo.').not().isEmpty(),
         check('ubicacion', 'Dónde se ubica el equipo?').not().isEmpty(),
-
+        check('cantidad', 'Ingresar la cantidad.').not().isEmpty(),
                
         validarCampos
     ],

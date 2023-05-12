@@ -23,6 +23,9 @@ const Imagenologia = dbConnection.define('imagenologias', {
     clasificacion: {
         type: DataTypes.STRING
     },
+    cantidad: {
+        type: DataTypes.STRING
+    },
     ubicacion:{
         type: DataTypes.STRING
     },
