@@ -42,6 +42,7 @@ app.use('/api/movimiento', require('./routes/movimiento') );
 app.use('/api/regulador', require('./routes/regulador') );
 app.use('/api/role', require('./routes/role') );
 app.use('/api/sitio', require('./routes/sitio') );
+app.use('/api/telecom', require('./routes/telecomunicacion') );
 app.use('/api/ticket', require('./routes/ticket') );
 
 app.get('*', ( req, res ) => {
