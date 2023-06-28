@@ -29,6 +29,9 @@ const Computer = dbConnection.define('computer', {
     serieNobreak:{
         type: DataTypes.STRING
     },
+    serieCandado:{
+        type: DataTypes.STRING
+    },
     ip: {
         type: DataTypes.STRING
     },
@@ -37,6 +40,9 @@ const Computer = dbConnection.define('computer', {
     },
     cuenta: {
         type: DataTypes.STRING
+    },
+    aplicativoInst: {
+        type: DataTypes.STRING  
     },
     numEmpleado: {
         type: DataTypes.STRING

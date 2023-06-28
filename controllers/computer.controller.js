@@ -50,6 +50,19 @@ const registrarEquipo = async ( req, res = response ) => {
             });
         }
 
+        // Validamos si ya existe una ip igual
+        const existIp = await Computer.findOne({
+            where: {
+                ip:body.ip
+            }
+        });
+
+        if ( existIp ) {
+            return res.status(400).json({
+                msg: 'Ya se encuantra asignada la ip ' + body.ip
+            });
+        }
+
         const computer = new Computer( body );
 
         await computer.save();
