@@ -63,6 +63,20 @@ const registrarEquipo = async ( req, res = response ) => {
             });
         }
 
+        // Validar serie del candado
+        const existSerieCandado = await Computer.findOne({
+            where: {
+                serieCandado:body.serieCandado
+            }
+        });
+
+        if ( existSerieCandado ) {
+            return res.status(400).json({
+                msg: 'Ya se encuentra registrada la serie del candado ' + body.serieCandado
+            });
+            
+        }
+
         const computer = new Computer( body );
 
         await computer.save();
