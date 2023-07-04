@@ -46,7 +46,7 @@ const registrarEquipo = async ( req, res = response ) => {
 
         if ( existSerieNobreak ) {
             return res.status(400).json({
-                msg: 'Ya se encuentra registrada la serie ' + body.serieNobreak
+                msg: 'Ya se encuentra registrado el noBreak con la serie ' + body.serieNobreak
             });
         }
 
