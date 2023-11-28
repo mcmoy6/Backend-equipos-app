@@ -37,6 +37,7 @@ app.use('/api/imagenologia', require('./routes/imagenologia') );
 app.use('/api/empleado', require('./routes/empleado') );
 app.use('/api/impresora', require('./routes/impresora') );
 app.use('/api/inventario', require('./routes/inventario') );
+app.use('/api/mainbilcomputer', require('./routes/mainbilcomputer') );
 app.use('/api/monitor', require('./routes/monitor') );
 app.use('/api/movimiento', require('./routes/movimiento') );
 app.use('/api/regulador', require('./routes/regulador') );
