@@ -155,43 +155,43 @@ const actualizarEquipo = async ( req, res = response ) => {
         }
 
         // Validamos si ya existe una serie de cpu igual en la BD
-        const existSerieCpu = await Mainbilcomputer.findOne({
-            where: {
-                serieCpu: body.serieCpu
-            }
-        });
+        // const existSerieCpu = await Mainbilcomputer.findOne({
+        //     where: {
+        //         serieCpu: body.serieCpu
+        //     }
+        // });
 
-        if ( existSerieCpu ) {
-            return res.status(400).json({
-                msg: 'Ya se encuentra registrada la serie ' + body.serieCpu
-            });
-        }
+        // if ( existSerieCpu ) {
+        //     return res.status(400).json({
+        //         msg: 'Ya se encuentra registrada la serie ' + body.serieCpu
+        //     });
+        // }
 
         // // Validamos si ya existe una serie de monitor igual en la BD
-        const existSerieMonitor = await Mainbilcomputer.findOne({
-            where: {
-                serieMonitor: body.serieMonitor
-            }
-        });
+        // const existSerieMonitor = await Mainbilcomputer.findOne({
+        //     where: {
+        //         serieMonitor: body.serieMonitor
+        //     }
+        // });
 
-        if ( existSerieMonitor ) {
-            return res.status(400).json({
-                msg: 'Ya se encuentra registrada la serie ' + body.serieMonitor
-            });
-        }
+        // if ( existSerieMonitor ) {
+        //     return res.status(400).json({
+        //         msg: 'Ya se encuentra registrada la serie ' + body.serieMonitor
+        //     });
+        // }
 
         // // Validamos si ya existe una serie de NoBreak igual en la BD
-        const existSerieNobreak = await Mainbilcomputer.findOne({
-            where: {
-                serieNobreak: body.serieNobreak
-            }
-        });
+        // const existSerieNobreak = await Mainbilcomputer.findOne({
+        //     where: {
+        //         serieNobreak: body.serieNobreak
+        //     }
+        // });
 
-        if ( existSerieNobreak ) {
-            return res.status(400).json({
-                msg: 'Ya se encuentra registrada la serie ' + body.serieNobreak
-            });
-        }
+        // if ( existSerieNobreak ) {
+        //     return res.status(400).json({
+        //         msg: 'Ya se encuentra registrada la serie ' + body.serieNobreak
+        //     });
+        // }
         
         await computer.update( body );
         res.json({

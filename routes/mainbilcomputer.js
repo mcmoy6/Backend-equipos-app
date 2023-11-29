@@ -20,7 +20,7 @@ router.post(
     '/new', 
     [
         check('sitio', 'Ingrese el ID del Sitio').not().isEmpty(),
-        check('numEmpleado', 'Ingresar el numero del empleado').not().isEmpty(),
+        // check('numEmpleado', 'Ingresar el numero del empleado').not().isEmpty(),
         check('area', 'El área de empleado es obligatoria').not().isEmpty(),
         check('serieCpu', 'Ingrese la serie el CPU').not().isEmpty(),
         check('serieMonitor', 'La serie del Monitor es obligatoria').not().isEmpty(),
