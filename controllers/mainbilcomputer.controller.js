@@ -19,6 +19,7 @@ const registrarEquipo = async ( req, res = response ) => {
 
         if ( existSerieCpu ) {
             return res.status(400).json({
+                validateError: true,
                 msg: 'Ya se encuentra registrada la serie ' + body.serieCpu
             });
         }
@@ -89,6 +90,7 @@ const registrarEquipo = async ( req, res = response ) => {
     } catch (error) {
         console.log(error);
         res.status(500).json({
+            ok: false,
             msg: 'Error a la hora de guardar. Por favor, hable con el administrador'
         });
         
@@ -154,7 +156,9 @@ const actualizarEquipo = async ( req, res = response ) => {
             });
         }
 
-        // Validamos si ya existe una serie de cpu igual en la BD
+        
+
+        //Validamos si ya existe una serie de cpu igual en la BD
         // const existSerieCpu = await Mainbilcomputer.findOne({
         //     where: {
         //         serieCpu: body.serieCpu
