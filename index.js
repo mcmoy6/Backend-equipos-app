@@ -46,6 +46,7 @@ app.use('/api/sitio', require('./routes/sitio') );
 app.use('/api/telecom', require('./routes/telecomunicacion') );
 app.use('/api/ticket', require('./routes/ticket') );
 app.use('/api/telefonia', require('./routes/telefonia') );
+app.use('/api/articuloservicios', require('./routes/articuloservicios') );
 
 app.get('*', ( req, res ) => {
     res.sendFile( __dirname + '/public/index.html' );
